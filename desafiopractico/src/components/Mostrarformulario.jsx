@@ -1,26 +1,41 @@
 import React from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../App.css'; 
 
-const Mostrarformulario = ({nombre, apellido, dui, nacionalidad, direccion, municipio, departamento}) => {
-    return (
-        <>
-            <div className="list">
-                <h2>Nombre: </h2>
-                <h3>{nombre}</h3>
-                <h2>Apellido: </h2>
-                <h3>{apellido}</h3>
-                <h2>Dui: </h2>
-                <h3>{dui}</h3>
-                <h2>Nacionalidad: </h2>
-                <h3>{nacionalidad}</h3>
-                <h2>Direccion: </h2>
-                <h3>{direccion}</h3>
-                <h2>Municipio: </h2>
-                <h3>{municipio}</h3>
-                <h2>Departamento: </h2>
-                <h3>{departamento}</h3>
-            </div>
-        </>
-    )
+const Mostrarformulario = ({nombre, apellido, genero, dui, nacionalidad, direccion, municipio, departamento, fechaNacimiento}) => {
+    if(nombre == null){
+        return(<>
+            <h1>Todavia no ha ingresado paciente</h1>
+        </>)
+    }else{
+        return (
+            <>
+                <div className="list">
+                    <br/>
+                    
+                    <h1>DATOS INGRESADOS</h1>
+                    <h2>Nombre Completo: </h2>
+                    <p>{nombre} {apellido}</p>             
+                    <h2>Genero: </h2>
+                    <p>{genero}</p>
+                    <h2>Dui: </h2>
+                    <p>{dui}</p>
+                    <h2>Fecha de Nacimiento: </h2>
+                    <p>{fechaNacimiento}</p>
+                    <h2>Nacionalidad: </h2>
+                    <p>{nacionalidad}</p>
+                    <h2>Direccion: </h2>
+                    <p>{direccion}</p>
+                    <h2>Municipio: </h2>
+                    <p>{municipio}</p>
+                    <h2>Departamento: </h2>
+                    <p>{departamento}</p>
+
+                </div>
+            </>
+        )
+    }
+    
 }
 
 export default Mostrarformulario
