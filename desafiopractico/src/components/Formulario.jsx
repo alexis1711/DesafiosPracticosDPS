@@ -107,7 +107,10 @@ export default function Formulario(){
             alert('Todos los campos deben estar llenos')
             return
         }
-        
+        if(dui.length < 9 || dui.length >9){
+            alert('Numero de dui incorrecto')
+            return
+        }
         
         var sexo = '';
         switch (opcion) {
